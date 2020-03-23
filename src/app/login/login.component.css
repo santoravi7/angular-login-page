@@ -1,0 +1,38 @@
+h4{
+  font-family: lato;
+  font-size: 14px;
+}
+
+body{
+  background: #f7f7f7;
+  font-family: lato;
+}
+
+.login-nav{
+  background: #fff;
+  height: 45px;
+  padding:20px;
+}
+
+.login-form{
+  margin: 0px auto;
+  width: 300px;
+  box-shadow: 0px 2px 10px 0px #dadada;
+  padding: 20px;
+  text-align: center;
+}
+
+.login-form .btn-section{
+  margin-top: 10px;
+  padding: 10px;
+}
+
+.login-form .btn-section .event-view-btn{
+    padding: 10px 20px;
+    border: 0px;
+    background: #2c6f9e;
+    color: white;
+    min-width: 180px;
+    font-family: lato;
+    font-size: 14px;
+}
