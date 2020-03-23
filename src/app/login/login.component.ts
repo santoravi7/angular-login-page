@@ -18,10 +18,10 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
   validate_form(choice : string) : void {
+
+  
    var userName = (<HTMLInputElement>document.getElementById("user-name")).value;
    var pass = (<HTMLInputElement>document.getElementById("password")).value;
-
-   console.log("validate form - "+userName+" -- "+pass);
    if(choice == 'username'){
 		this.username=""
 		if(userName.length < 1)
@@ -42,6 +42,7 @@ export class LoginComponent implements OnInit {
       
      var flag=0
     for (var value of this.credentials) {
+       console.log("credentials -- "+value.username+" --- "+value.password) 
       if((value.username == userName) && (value.password == pass)){
         
         flag=1;
@@ -49,13 +50,12 @@ export class LoginComponent implements OnInit {
       }
     }
     if(flag==1){
-      this.validate=true
-      console.log("Login Sucessful");
+      this.validate = true
       this.router.navigate(['/home']);
 
     }
     else{
-      this.validate=false
+      this.validate = false
     }
 		
 	}

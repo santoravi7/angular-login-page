@@ -1,7 +1,7 @@
 <div id="event-creation-container" class="">
   <div class="row">
    
-    <div class="col-6 login-right no-padding">
+    <div class="">
       <div class="login-form">
           <h2>Instagram</h2>
           <div class="form-group">
@@ -22,7 +22,11 @@
           
       </div>          
       <div *ngIf="validate"></div> 
-      
+      <div class="signup-wrapper mtop-0">
+        <div class="signup">
+          <h4>Don't have an account? <a [routerLink]="['/signup']" class=""><span>Sign up</span></a></h4>
+        </div>
+      </div>
     </div>
   </div>
 </div>
