@@ -3,6 +3,11 @@ h4{
   font-size: 14px;
 }
 
+h2{
+  font-family: lato;
+  font-size: 25px;
+}
+
 body{
   background: #f7f7f7;
   font-family: lato;
@@ -47,4 +52,12 @@ body{
 .login-form .form-group  .form-text-field:focus{
     border: 1px solid #2c6f9e;
     outline: none;
+}
+
+.errors{
+  color: red;
+  font-family: lato;
+  display: block;
+  margin-top: 5px;
+  font-size: 14px;
 }
