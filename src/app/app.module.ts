@@ -7,7 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { RouterModule,Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { SignupComponent } from './signup/signup.component';
-
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 const appRoutes:Routes =[
   {path :'', component :LoginComponent},

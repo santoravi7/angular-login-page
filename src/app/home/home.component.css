@@ -1,5 +1,9 @@
 body{
-    background: #efefef;
+  background-color: #f5f5f5 !important;
+}
+
+.container-fluid{
+  padding: 0px !important;
 }
 
 div.navbar-fixed-top {
@@ -10,6 +14,7 @@ div.navbar-fixed-top {
 }
 .navbar-header {
     float: none;
+    box-shadow: 1px 1px 1px #dadada;
 }
 .navbar-fixed-top {
     top: 0;
@@ -24,7 +29,10 @@ div.navbar-fixed-top {
     }
 }
 
-
+.cḷr-div{
+  clear: both;
+  height: 20px;
+}
 
 .sr-only {
     border: 0;
@@ -56,24 +64,22 @@ div.navbar-fixed-top {
 }
 
 .navbar-brand {
-    float: left;
     height: 50px;
     padding: 15px 15px;
     font-size: 18px;
     line-height: 20px;
-
-}
-
-.navbar-brand {
-    padding: 5px;
-    float: none;
+    color: #000;
+    font-weight: 900;
     width: 170px;
     display: block;
-    height: 51px;
     padding-left: 35px;
-    font-size: 18px;
     font-family: lato;
     text-decoration: none;
+}
+
+.navbar-brand h3{
+  margin: 0px;
+  font-size: 18px;
 }
 
 .navbar-brand>img {
@@ -195,4 +201,133 @@ ul {
     right: 0;
     left: 0;
     z-index: 1030;
+}
+
+.mtop-50{
+  margin-top: 60px;
+}
+
+.profile-pic{
+  width: 35px;
+  border-radius: 50%;
+  overflow: hidden;
+  height: 35px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.likedby-profile-pic{
+  width: 25px;
+  border-radius: 50%;
+  overflow: hidden;
+  height: 25px;
+  display: inline-block;
+  vertical-align: middle;
+
+}
+
+.profile-pic img{
+  width: 100%;
+  height: 100%;
+}
+
+.post-header{
+  padding: 15px 20px;
+  border: 1px solid #dedede;
+  background: #fff;
+}
+
+.post-body img, .save-post img, .comment img, .liked-by img{
+  width: 100%;
+}
+
+.post-btn-section, .liked-by{
+  padding: 0px 16px;
+}
+
+.post-btn-section .like,.post-btn-section .comment, .post-btn-section .save-post{
+  width: 45px;
+  height: 45px;
+  padding: 10px;
+  display: inline-block;
+}
+
+.liked-by{
+  padding-left: 25px;
+  margin-top: 2px;
+}
+
+.likedby-uname{
+  display: inline-block;
+  margin-left: 15px;
+  font-size: 14px;
+  font-family: lato;
+}
+
+.bold{
+  font-weight: 900;
+}
+
+.current-user{
+  font-weight: 900;
+  font-family: lato;
+  font-size: 14px;
+ 
+}
+
+.caption-div, .comments-section{
+  padding: 0px 25px;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.caption-div .caption, .caption-div .current-user, .comments-section .current-user, .comments-section .caption{
+  display: inline-block;
+}
+.caption{
+   margin-left: 10px;
+}
+
+.view-all{
+  color: #a0a0a0;
+  margin-bottom: 10px;
+}
+
+.post-footer{
+  background: #fff;
+}
+
+.comments-posted-time{
+  padding: 8px;
+  padding-left: 25px;
+  color: #999;
+  padding-bottom: 15px;
+  font-size: 10px;
+  text-transform: uppercase;
+  font-weight: 600;
+  border-bottom: 1px solid #e4e4e4;
+}
+
+.comment-textbox{
+  padding-left: 25px;
+  height: 62px;
+}
+
+.comment-textbox textarea{
+  padding: 1px;
+  border: none;
+  outline: none;
+  width: calc(100% - 50px);
+}
+
+.comment-textbox button{
+  background: none;
+  color: #2c6f9e;
+  border: none;
+  vertical-align: top;
+  margin-top: 10px;
+  font-size: 14px;
+  font-family: lato;
+  font-weight: 600;
+  
 }

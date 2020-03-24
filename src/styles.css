@@ -1,1 +1,11 @@
 /* Add application styles & imports to this file! */
+
+app-home{
+  height: 450px;
+  padding:0px;
+}
+
+.container-fluid{
+  background: #f9f9f9;
+ 
+}
