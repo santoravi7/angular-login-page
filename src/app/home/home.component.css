@@ -65,7 +65,7 @@ div.navbar-fixed-top {
 
 .navbar-brand {
     height: 50px;
-    padding: 15px 15px;
+    padding: 10px 15px;
     font-size: 18px;
     line-height: 20px;
     color: #000;
@@ -79,7 +79,7 @@ div.navbar-fixed-top {
 
 .navbar-brand h3{
   margin: 0px;
-  font-size: 18px;
+  font-size: 21px;
 }
 
 .navbar-brand>img {
@@ -232,7 +232,7 @@ ul {
 }
 
 .post-header{
-  padding: 15px 20px;
+  padding: 13px 20px;
   border: 1px solid #dedede;
   background: #fff;
 }
@@ -329,5 +329,8 @@ ul {
   font-size: 14px;
   font-family: lato;
   font-weight: 600;
-  
+}
+
+.post-wrapper{
+  margin-bottom: 20px;
 }
