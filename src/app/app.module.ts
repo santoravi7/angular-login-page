@@ -20,11 +20,13 @@ import { AppRoutingModule } from './app-routing.module';
   imports:      [ 
     BrowserModule, 
     FormsModule, 
-     AppRoutingModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
-    )],
+    ),
+    AppRoutingModule
+  ],
+    
   declarations: [ 
     AppComponent, 
     LoginComponent, 
