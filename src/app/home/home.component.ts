@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../user'
 import { USER } from '../user-credentials';
+import { UsersService } from '../users.service';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -8,14 +10,11 @@ import { USER } from '../user-credentials';
 })
 export class HomeComponent implements OnInit {
   user:User[];
-  constructor() { }
+  constructor(private usersService:UsersService) { }
 
   ngOnInit() {
-    getUser();
+   //this.getUser();
   }
-  getUser():void{
-    this.notebookService.getNotebooks()
-        .subscribe(notes => this.notebooks = notes);
-  }
+
 
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../user'
 import { USER } from '../user-credentials';
+import { UsersService } from '../users.service';
 import { RouterModule, Router } from '@angular/router';
 
 @Component({
@@ -12,10 +13,15 @@ export class LoginComponent implements OnInit {
      username:string;
    password:string;
   credentials :User[]=USER;
-
-  constructor(private router: Router) { }
+  users : User[];
+  constructor(private usersService: UsersService,
+  private router: Router) { }
 
   ngOnInit() {
+    this.getUsers();
+  }
+  getUsers():void{
+    this.usersService.getUsers().subscribe(users=>this.users=users)
   }
   validate_form(choice : string) : void {
 
