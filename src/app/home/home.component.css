@@ -27,6 +27,14 @@ div.navbar-fixed-top {
     .navbar-toggle {
         display: none;
     }
+    
+}
+
+@media (min-width: 1200px){ 
+  .right-nav {
+    width: 23% !important;
+    right: 140px !important;
+  }
 }
 
 .cḷr-div{

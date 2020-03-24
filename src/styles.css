@@ -10,17 +10,26 @@ app-home{
   margin: 0px 130px;
 }
 
-@media only screen and (max-width: 995px) {
+@media only screen and (max-width: 1000px) {
     .container-fluid{
       margin: 0px !important;
+      padding-left: 0px !important;
+      padding-right: 0px !important;
+    }
+    .container{
+      padding-left: 0px !important;
+      padding-right: 0px !important;
     }
 }
 
+
+
 @media (min-width: 1200px){ 
   .container {
-      width: 1020px;
+    width: 970px;
   }
-  .col-lg-8 {
-    width: 64.666667%;
+  .right-nav {
+    width: 23% !important;
+    right: 140px !important;
   }
 }
