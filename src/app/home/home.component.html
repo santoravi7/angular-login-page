@@ -9,13 +9,14 @@
 <div class="row mtop-50">
 
 <div class="row">
-  <div *ngIf="user.posts" class="container"style="padding:15px !important;" >
+  {{user}}
+  <div *ngIf="!user.posts.length>0" class="container"style="padding:15px !important;" >
     <div class="nopost">
     <img  src="https://image.flaticon.com/icons/svg/1362/1362857.svg" />
     <h3>No Posts Yet</h3>
     </div>
   </div>
-  <div *ngIf="!user.posts" class="container"style="padding:15px !important;" >
+  <div *ngIf="user.posts" class="container"style="padding:15px !important;" >
     <div *ngFor="let post of user.posts"class="col-md-8 col-xs-12 col-sm-12 col-lg-8 post-wrapper">
       <div class="post-header">
         <div class="profile-pic">

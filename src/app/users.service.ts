@@ -34,6 +34,14 @@ export class UsersService {
     );
   }
 
+  addUser (user: User): Observable<User> {
+    console.log("in service")
+    return this.http.post<User>(this.usersUrl, user, this.httpOptions).pipe(
+      tap((newUser: User) => this.log(`added hero w/ id=${newUser.id}`)),
+      catchError(this.handleError<User>('addUser'))
+    );
+  }
+
   private log(message: string) {
     this.mesageService.add(`UsersService: ${message}`);
   }

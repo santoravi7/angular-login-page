@@ -13,6 +13,8 @@ export class InMemoryDataService implements InMemoryDbService {
         id:1,
         username :"santo" , 
         password : "santo",
+        fullname : "santosh Ravi",
+        email : "santoravi7@gmail.com",
         posts : [{
           name:"ScratchedStories",
           profilepic: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQIi3vEDnvue29P8-GSDrcxFn-pGNcSjoRQomgvqvxPqBB9tIwL",
@@ -31,6 +33,8 @@ export class InMemoryDataService implements InMemoryDbService {
         id:2,
         username :"1234" , 
         password : "user1",
+        fullname : "santosh Ravi",
+        email : "santoravi7@gmail.com",
         posts: [{
 
         }]
