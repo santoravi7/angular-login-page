@@ -26,6 +26,14 @@ export class UsersService {
       );
   }
 
+  getUser(id: number): Observable<User> {
+    const url = `${this.usersUrl}/${id}`;
+    return this.http.get<User>(url).pipe(
+      tap(_ => this.log(`fetched User id=${id}`)),
+      catchError(this.handleError<User>(`User id=${id}`))
+    );
+  }
+
   private log(message: string) {
     this.mesageService.add(`UsersService: ${message}`);
   }

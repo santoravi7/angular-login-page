@@ -6,7 +6,7 @@ import { SignupComponent } from './signup/signup.component'
 
 const appRoutes:Routes =[
   {path :'', component :LoginComponent},
-  {path :'home', component :HomeComponent},
+  {path :'home/:id', component :HomeComponent},
   {path :'signup', component :SignupComponent}
 ]
 

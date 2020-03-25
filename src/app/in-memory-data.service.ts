@@ -14,6 +14,8 @@ export class InMemoryDataService implements InMemoryDbService {
         username :"santo" , 
         password : "santo",
         posts : [{
+          name:"ScratchedStories",
+          profilepic: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQIi3vEDnvue29P8-GSDrcxFn-pGNcSjoRQomgvqvxPqBB9tIwL",
           caption:"My First Post",
           img:"https://i.pinimg.com/originals/4c/28/3b/4c283b0fb76da7a57406ae25bebfa602.jpg",
           likes:"251",
@@ -22,7 +24,7 @@ export class InMemoryDataService implements InMemoryDbService {
           }],
           savepost: false,
           posttime: "5",
-          
+          liked: false
         }] 
       },
       {

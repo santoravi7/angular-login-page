@@ -20,6 +20,19 @@ div.navbar-fixed-top {
     top: 0;
     border-width: 0 0 1px;
 }
+
+.nopost{
+  width:150px;
+  height: 150px;
+  margin: 0px auto;
+  vertical-align: middle;
+}
+
+.nopost img{
+  width: 100%;
+  height: 100%;
+}
+
 @media (min-width: 768px){
     .navbar-fixed-top, .navbar-fixed-bottom {
         border-radius: 0;

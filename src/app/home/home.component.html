@@ -9,28 +9,35 @@
 <div class="row mtop-50">
 
 <div class="row">
-  <div class="container"style="padding:15px !important;" >
-    <div class="col-md-8 col-xs-12 col-sm-12 col-lg-8 post-wrapper">
+  <div *ngIf="user.posts" class="container"style="padding:15px !important;" >
+    <div class="nopost">
+    <img  src="https://image.flaticon.com/icons/svg/1362/1362857.svg" />
+    <h3>No Posts Yet</h3>
+    </div>
+  </div>
+  <div *ngIf="!user.posts" class="container"style="padding:15px !important;" >
+    <div *ngFor="let post of user.posts"class="col-md-8 col-xs-12 col-sm-12 col-lg-8 post-wrapper">
       <div class="post-header">
         <div class="profile-pic">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQIi3vEDnvue29P8-GSDrcxFn-pGNcSjoRQomgvqvxPqBB9tIwL"/>
+          <img src="{{post.profilepic}}"/>
         </div>
-        <h4 class="profile-name">mokkapostu</h4>
+        <h4 class="profile-name">{{post.name}}</h4>
       </div>  
       <div class="post-body">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRk_sks7CpwjnL9yWiIji8k7aI7mY86N9-byNxp-Gl-5w1Flmdc"/>
+        <img src="{{post.img}}"/>
       </div>
       <div class="post-footer">
         <div class="post-btn-section">
           <div class="like">
-            <img src="https://image.flaticon.com/icons/svg/1077/1077035.svg"/>
+            <img *ngIf="!post.savepost" src="https://image.flaticon.com/icons/svg/1077/1077035.svg"/>
           </div>
           <div class="comment">
             <img src="https://image.flaticon.com/icons/svg/2462/2462719.svg"/>
           </div>
           <div class="right">
             <div class="save-post">
-              <img src="https://image.flaticon.com/icons/svg/1159/1159580.svg"/>
+              <img *ngIf="!post.savepost"src="https://image.flaticon.com/icons/svg/1159/1159580.svg"/>
+              <img *ngIf="post.savepost"src="https://image.flaticon.com/icons/svg/1159/1159823.svg"/>
             </div>
           </div>
         </div>
@@ -39,14 +46,14 @@
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQIi3vEDnvue29P8-GSDrcxFn-pGNcSjoRQomgvqvxPqBB9tIwL"/>
           
           </div>
-          <div class="likedby-uname">Liked by <span class="bold">Santoravi</span> and <span class="bold">750 others</span> </div>
+          <div class="likedby-uname">Liked by <span class="bold">Santoravi</span> and <span class="bold">{{post.likes}} others</span> </div>
         </div>
         <div class="caption-div">
             <div class="current-user">
-              Santoravi
+              {{post.name}}
             </div>
             <div class="caption">
-              This is a sample caption !!!
+              {{post.caption}}
             </div>
         </div>
         <div class="comments-section">
@@ -59,7 +66,7 @@
             </div>
         </div>
         <div class="comments-posted-time">
-          6 hours ago
+          {{post.posttime}} hours ago
         </div>
         <div class="comment-textbox">
           <textarea rows="3"></textarea>
