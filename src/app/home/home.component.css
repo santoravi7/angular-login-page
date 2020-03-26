@@ -21,6 +21,10 @@ div.navbar-fixed-top {
     border-width: 0 0 1px;
 }
 
+.fwhite{
+  color: #fff;
+}
+
 .nopost{
   width:150px;
   height: 150px;
