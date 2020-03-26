@@ -259,6 +259,11 @@ ul {
   background: #fff;
 }
 
+.post-body{
+  height: 450px;
+  overflow: hidden;
+}
+
 .post-body img, .save-post img, .comment img, .liked-by img{
   width: 100%;
 }
@@ -440,4 +445,20 @@ ul {
   width: 22%;
   position: fixed;
   right: 200px;
+}
+
+.add-post h5{
+  text-align: right;
+  margin-top: 20px;
+}
+
+.add-post{
+  float: right;
+}
+
+.add-post input{
+  opacity: 0;
+  width: 100px;
+  position: relative;
+  top: -28px;
 }

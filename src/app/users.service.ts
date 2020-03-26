@@ -27,6 +27,7 @@ export class UsersService {
   }
 
   getUser(id: number): Observable<User> {
+    console.log("get user === ");
     const url = `${this.usersUrl}/${id}`;
     return this.http.get<User>(url).pipe(
       tap(_ => this.log(`fetched User id=${id}`)),
@@ -39,6 +40,14 @@ export class UsersService {
     return this.http.post<User>(this.usersUrl, user, this.httpOptions).pipe(
       tap((newUser: User) => this.log(`added hero w/ id=${newUser.id}`)),
       catchError(this.handleError<User>('addUser'))
+    );
+  }
+
+  updateUser(user: User): Observable<any> {
+    console.log("updated user -- "+user.posts.length)
+    return this.http.put(this.usersUrl, user, this.httpOptions).pipe(
+      tap(_ => this.log(`updated note id=${user.id}`)),
+      catchError(this.handleError<any>('updateUser'))
     );
   }
 
