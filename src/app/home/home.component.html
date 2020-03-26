@@ -11,14 +11,14 @@
 <div class="row">
   <div *ngIf="!user.posts.length>0" class="container"style="padding:15px !important;" >
     <div class="nopost">
-    <img  src="https://image.flaticon.com/icons/svg/1362/1362857.svg" />
-    <h3>No Posts Yet</h3>
-    <h3>add a post now</h3>
-    <input type='file' (change)="onSelectFile($event,user)" multiple>
+      <img  src="https://image.flaticon.com/icons/svg/1362/1362857.svg" />
+      <h3>No Posts Yet</h3>
+      <h3>add a post now</h3>
+      <input type='file' (change)="onSelectFile($event,user)" multiple>
     </div>
   </div>
   <div *ngIf="user.posts" class="container"style="padding:15px !important;" >
-    <div *ngFor="let post of user.posts"class="col-md-8 col-xs-12 col-sm-12 col-lg-8 post-wrapper">
+    <div *ngFor="let post of user.posts" class="col-md-8 col-xs-12 col-sm-12 col-lg-8 post-wrapper">
       <div class="post-header">
         <div class="profile-pic">
           <img src="{{post.profilepic}}"/>
@@ -26,7 +26,9 @@
         <h4 class="profile-name">{{post.name}}</h4>
       </div>  
       <div class="post-body">
-        <img src="{{post.img}}"/>
+        <div class="crop">
+          <img src="{{post.img}}"/>
+        </div>
       </div>
       <div class="post-footer">
         <div class="post-btn-section">
@@ -46,9 +48,9 @@
         <div class="liked-by">
           <div class="likedby-profile-pic">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQIi3vEDnvue29P8-GSDrcxFn-pGNcSjoRQomgvqvxPqBB9tIwL"/>
-          
           </div>
-          <div class="likedby-uname">Liked by <span class="bold">Santoravi</span> and <span class="bold">{{post.likes}} others</span> </div>
+          <div *ngIf="!user.liked>0" class="likedby-uname">Liked by <span class="bold">Santoravi</span> and <span class="bold">{{post.likes}} others</span> 
+          </div>
         </div>
         <div class="caption-div">
             <div class="current-user">
@@ -90,33 +92,47 @@
           <input type='file' (change)="onSelectFile($event,user)" multiple>
         </div>
       </div>
-      <div class="stories">
+      <div class="stories fake-scroll">
           <div class="stories-watch">
             <h5 style="display: inline-block">Stories</h5>
             <h5 class="pull-right watch-all">Watch All</h5>
           </div>
-          <div class="stories-wrapper">
+          <div *ngFor="let story of user.stories"  class="stories-wrapper">
               <div class="profile-pic">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQIi3vEDnvue29P8-GSDrcxFn-pGNcSjoRQomgvqvxPqBB9tIwL"/>
+                <img src="{{story.profilepic}}"/>
               </div>
               <div class="stories-main">
-                <h4 class="stories-name">santo ravi</h4>
-                <h5 class="posted-time">3 hours ago</h5>
+                <button (click)="openModal(template);">
+                <h4 class="stories-name">{{story.name}}</h4>
+                <h5 class="posted-time">{{story.posttime}} hours ago</h5>
+                </button>
               </div>
+              <ng-template #template>
+                <!-- <div class="modal-header modal-sm">
+                  
+                  <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div> -->
+                <div class="modal-body modal-sm">
+                    <h6>{{story.name}}</h6>
+                    <img src="{{story.img}}"/>
+                </div>
+              </ng-template>
           </div>
       </div>
-      <div class="stories">
+      <div class="stories" style="overflow:hidden">
           <div class="stories-watch">
             <h5 style="display: inline-block">Suggestions for you</h5>
             <h5 class="pull-right watch-all">See All</h5>
           </div>
-          <div class="stories-wrapper">
+          <div *ngFor="let suggestion of user.suggestions"   class="stories-wrapper">
               <div class="profile-pic">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQIi3vEDnvue29P8-GSDrcxFn-pGNcSjoRQomgvqvxPqBB9tIwL"/>
+                <img src="{{suggestion.profilepic}}"/>
               </div>
               <div class="stories-main">
-                <h4 class="stories-name">santo ravi</h4>
-                <h5 class="posted-time">3 hours ago</h5>
+                <h4 class="stories-name">{{suggestion.name}}</h4>
+                <h5 class="posted-time">followed by {{suggestion.followedby}}</h5>
               </div>
           </div>
       </div>

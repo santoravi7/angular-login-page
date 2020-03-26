@@ -5,4 +5,6 @@ export interface User {
     fullname:string;
     email:string;
     posts: [];
+    stories: [];
+    suggesstions: [];
 }

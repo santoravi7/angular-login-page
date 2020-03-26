@@ -15,6 +15,9 @@ import { MessageComponent } from './message/message.component';
 import { MesageService } from './mesage.service';
 import { AppRoutingModule } from './app-routing.module';
 
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ModalContentComponent } from './app.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 @NgModule({
   imports:      [ 
@@ -24,7 +27,9 @@ import { AppRoutingModule } from './app-routing.module';
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
     ),
-    AppRoutingModule
+    AppRoutingModule,
+    ModalModule.forRoot(),  
+    NgbModule
   ],
     
   declarations: [ 
@@ -32,7 +37,11 @@ import { AppRoutingModule } from './app-routing.module';
     LoginComponent, 
     HomeComponent, 
     SignupComponent, 
-    MessageComponent 
+    MessageComponent,
+    ModalContentComponent 
+  ],
+  entryComponents: [
+    ModalContentComponent,
   ],
   bootstrap:    [ AppComponent ],
   providers: [UsersService, MesageService, InMemoryDataService]

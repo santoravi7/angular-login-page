@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
 import { User } from '../user'
 import { USER } from '../user-credentials';
 import { UsersService } from '../users.service';
 import { ActivatedRoute } from '@angular/router'
+import { BsModalService } from 'ngx-bootstrap/modal';
+import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
 
 @Component({
   selector: 'app-home',
@@ -10,12 +12,17 @@ import { ActivatedRoute } from '@angular/router'
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  user:User[];
-  constructor( private route: ActivatedRoute,private usersService:UsersService) { }
+  user:User[]; modalRef: BsModalRef;
+  constructor( private route: ActivatedRoute,private usersService:UsersService,private modalService: BsModalService) { }
 
   ngOnInit() {
    this.getUser();
   }
+
+  openModal(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template);
+  }
+
   getUser(): void {
     const id = +this.route.snapshot.paramMap.get('id');
     this.usersService.getUser(id)
