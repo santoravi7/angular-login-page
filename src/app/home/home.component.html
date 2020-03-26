@@ -95,7 +95,7 @@
       <div class="stories fake-scroll">
           <div class="stories-watch">
             <h5 style="display: inline-block">Stories</h5>
-            <h5 class="pull-right watch-all">Watch All</h5>
+            <h5 class="pull-right watch-all" (click)="watchAll(user);">Watch All</h5>
           </div>
           <div *ngFor="let story of user.stories"  class="stories-wrapper">
               <div class="profile-pic">

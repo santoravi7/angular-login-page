@@ -26,6 +26,15 @@ export class UsersService {
       );
   }
 
+  getStories (): Observable<User[]>{
+      console.log("get stories");
+      return this.http.get<User["stories"]>(this.usersUrl)
+      .pipe(
+        tap(_=>this.log("fetched stories")),
+        catchError(this.handleError<User[]>('getStories',[]))
+      )
+  }
+
   getUser(id: number): Observable<User> {
     console.log("get user === ");
     const url = `${this.usersUrl}/${id}`;

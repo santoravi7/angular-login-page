@@ -5,6 +5,10 @@ import { UsersService } from '../users.service';
 import { ActivatedRoute } from '@angular/router'
 import { BsModalService } from 'ngx-bootstrap/modal';
 import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/takeWhile';
+import 'rxjs/add/observable/timer'
+
 
 @Component({
   selector: 'app-home',
@@ -13,6 +17,7 @@ import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
 })
 export class HomeComponent implements OnInit {
   user:User[]; modalRef: BsModalRef;
+  userPost; alive = true;
   constructor( private route: ActivatedRoute,private usersService:UsersService,private modalService: BsModalService) { }
 
   ngOnInit() {
@@ -29,9 +34,20 @@ export class HomeComponent implements OnInit {
       .subscribe(
         user => this.user = user
       );
-  } 
-  userPost
-   onSelectFile(event,user) {
+  }
+
+  watchAll():void{
+      Observable.timer(0,10000)
+      .takeWhile(() => this.alive) // only fires when component is alive
+      .subscribe(() => {
+        this.usersService.getStories().subscribe(data=> {
+          console.log("user stories from service -- "+data);
+        })
+      });
+  }
+  
+  
+  onSelectFile(event,user) {
     this.userPost = user;
     console.log("user object -- "+this.userPost.posts[0].name);
     if (event.target.files && event.target.files[0]) {
